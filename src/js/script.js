@@ -8,6 +8,15 @@ function validarEntrada(mensagem) {
 }
 
 
+function verificarEstoqueBaixo(quantidade) {
+    if (quantidade < 5) {
+        return "Estoque baixo!";
+    } else {
+        return "Estoque OK";
+    }
+}
+
+
 let continuar = "s";
 
 
@@ -18,10 +27,7 @@ while (continuar === "s" || continuar === "S") {
     let valorSafra = parseInt(safra);
     let pais = validarEntrada("Qual é o seu país de origem?");
     let qntd = parseInt(prompt("Qual é a quantidade atual em estoque?"));
-    
-
-    alert("Cadastro realizado! Veja os detalhes no console.");
-    console.log("Vinho: " + nomeDoVinho + " - Tipo: " + tipo + " | Safra: " + valorSafra + " | País: " + pais + " | Estoque: " + qntd );
+    let avisoEstoque = verificarEstoqueBaixo(qntd);
 
     
     continuar = prompt("Deseja cadastrar outro vinho? Digite 's' para Sim ou qualquer outra tecla para Sair:");

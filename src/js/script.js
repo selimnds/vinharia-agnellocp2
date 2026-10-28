@@ -1,20 +1,28 @@
-
-var VinhosCadastro = parseInt(prompt("Quantos vinhos serão cadastrados?"))
-
-function CadastroDeVinhos() {   
-    var nomeDoVinho = prompt("Digite o nome e tipo do vinho que deseja cadastrar: ");
-    var tipo = prompt("Qual é o tipo de vinho? (Tinto, Branco, Rosé) ")
-    var safra = prompt("Qual é a safra dele? ");
-    var valorSafra = parseInt(safra)
-    var pais = prompt("Qual é o seu país de origem? ");
-    var qntd = parseInt(prompt("Qual é a quantidade atual em estoque?"))
-
-    alert("Cadastro realizado! Veja os detalhes no console.")
-    console.log(`O nome do vinho e tipo do vinho são: ${nomeDoVinho} - ${tipo}. Sua safra é ${valorSafra} e é do país ${pais}
-    \n Temos ${qntd} em estoque`)
+function validarEntrada(mensagem) {
+    let valor = prompt(mensagem);
+    while (valor === "") {
+        alert("O campo não pode ficar vazio. Tente novamente!");
+        valor = prompt(mensagem);
+    }
+    return valor;
 }
 
-for (let n = 0; n < VinhosCadastro; n++){
-    CadastroDeVinhos();
-}
 
+let continuar = "s";
+
+
+while (continuar === "s" || continuar === "S") {
+    let nomeDoVinho = validarEntrada("Digite o nome e tipo do vinho que deseja cadastrar:");
+    let tipo = validarEntrada("Qual é o tipo de vinho? (Tinto, Branco, Rosé)");
+    let safra = prompt("Qual é a safra dele?");
+    let valorSafra = parseInt(safra);
+    let pais = validarEntrada("Qual é o seu país de origem?");
+    let qntd = parseInt(prompt("Qual é a quantidade atual em estoque?"));
+    
+
+    alert("Cadastro realizado! Veja os detalhes no console.");
+    console.log("Vinho: " + nomeDoVinho + " - Tipo: " + tipo + " | Safra: " + valorSafra + " | País: " + pais + " | Estoque: " + qntd );
+
+    
+    continuar = prompt("Deseja cadastrar outro vinho? Digite 's' para Sim ou qualquer outra tecla para Sair:");
+}

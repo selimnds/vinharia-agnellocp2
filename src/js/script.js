@@ -39,3 +39,11 @@ function ClassificaoDeVinhos(){
         classificacao = 'Antigo'    
     }
 }
+
+function LogarEAvisar(){
+    console.log("Vinho: " + nomeDoVinho + " - Tipo: " + tipo + " | Safra: " + safra + " | País: " + pais + " | Estoque: " + qntd + " (" + avisoEstoque + ")" + " Classificação: " + classificacao);
+    alert("Dados cadastrados! Cheque-os no console (Dica: Aperte F12)")
+}
+
+ClassificaoDeVinhos();
+LogarEAvisar();

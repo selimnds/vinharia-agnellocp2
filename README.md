@@ -74,5 +74,4 @@ Funcionalidades adicionadas entre os dias 27 e 28 de outubro de 2026, organizada
  
 ## Link para o Site (GitHub Pages)
  
-* *Como clonar o projeto*:
-* *Link do Projeto* 
+* *Link do Projeto: https://selimnds.github.io/vinharia-agnellocp2/* 
